@@ -1,0 +1,68 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  transition: 0.4s;
+}
+
+input {
+  visibility: hidden;
+}
+
+input:checked + label {
+  background-color: #fff;
+}
+
+label {
+  background-color: lightgray;
+  width: 10rem;
+  height: 5rem;
+  position: absolute;
+  border-radius: 20px;
+}
+
+.circle {
+  width: 4rem;
+  height: 4rem;
+  background-color: #fff;
+  border-radius: 20px;
+  top: 5px;
+  left: 3px;
+  position: absolute;
+  cursor: pointer;
+  animation: toggleOff 0.4s linear forwards;
+}
+
+input:checked + label .circle {
+  animation: toggleOn 0.4s linear forwards;
+  background-color: #212529;
+}
+
+@keyframes toggleOn {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(5rem);
+  }
+}
+
+@keyframes toggleOff {
+  0% {
+    transform: translateX(5rem);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
